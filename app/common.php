@@ -34,8 +34,11 @@
             header('Content-Type: application/vnd.ms-excel');
         }
 
+        // header("Content-Disposition: attachment;filename="
+        //     . $filename . date('Y-m-d') . '.' . strtolower($format));
+            
         header("Content-Disposition: attachment;filename="
-            . $filename . date('Y-m-d') . '.' . strtolower($format));
+            . $filename . '.' . strtolower($format));
         header('Cache-Control: max-age=0');
         $objWriter = \PhpOffice\PhpSpreadsheet\IOFactory::createWriter($newExcel, $format);
         //$objWriter = IOFactory::createWriter($newExcel, $format);
